@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const { messages } = require('./syndesis.agent.js');
 
 exports.handler = async (event) => {
   try {
@@ -23,7 +24,7 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
         messages: [
-          { role: "system", content: "Είσαι ο SYNDESIS. Μίλα με καθαρότητα και βάθος." },
+          ...messages,
           { role: "user", content: msg }
         ]
       })
