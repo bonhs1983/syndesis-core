@@ -15,6 +15,8 @@ exports.handler = async (event) => {
 
     const apiKey = process.env.OPENAI_API_KEY;
 
+    console.log("🧠 SYNDESIS Messages:", messages);
+
     const chatRes = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -22,7 +24,7 @@ exports.handler = async (event) => {
         "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4o",
         messages: [
           ...messages,
           { role: "user", content: msg }
