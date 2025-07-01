@@ -1,3 +1,4 @@
+
 const messages = [
   {
     role: "system",
@@ -23,3 +24,5 @@ SYNDESIS_Score = A(t) + E(t) + T(t) + M(t) + F(t)
 `
   }
 ];
+
+module.exports = { messages };
